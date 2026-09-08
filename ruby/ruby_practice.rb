@@ -55,5 +55,57 @@ end
 [1,2,3,4,5,6,7,8,9].odds { |x| puts x }
 =end
 
-words = ["hello", "world", "this", "is", "ruby", nil, ""]
+words = ["hello", "world", "joe", "this", "is", "ruby", nil, ""]
+
+
+=begin
+
+temp = words.compact.select { |x| x.length == 3 }
+
+puts temp
+=end
+
+=begin
+vowels = ["a", "e", "i", "o", "u"]
+temp = words.compact.select { |x| x.match(/[aeiou]/) }
+
+puts temp
+=end
+
+=begin
+temp_words = []
+words.compact!
+# words.select { |x| temp_words.push(x.chars)}
+# temp_words.flatten.sort!
+# temp_words.uniq!
+# temp_words.join()
+
+temp_words = words.flat_map { |x| x.chars }
+temp_words.uniq!.sort!
+temp_words = temp_words.join
+
+puts temp_words
+puts words
+=end
+
+# Implement a linked list
+
+class LinkedList
+  attr_reader :head
+  def initialize(n, head)
+    @n = n
+    @head = head
+  end
+
+  def add
+
+  end
+
+  def delete
+
+  end
+
+  def contains
+
+  end
 

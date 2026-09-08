@@ -192,21 +192,31 @@ words.compact.select { |x| x.length == 3 }
 Only those words that contain at least one vowel (a, e, i, o, u).
 ```ruby
 vowels = ["a", "e", "i", "o", "u"]
-words.compact.select { |x| x.include?(vowels)}
+temp = words.compact.select { |x| x.match(/[aeiou]/) }
 
 ```
 
 A string that is the concatenation of all the words. 
 ```ruby
-words.join()
+words.compact.join()
 ```
 
 A string that contains exactly one of each letter contained in any word, in sorted order. So if words contains `["apple", "banana", nil, "cat"]`, the string should be `"abcelnpt"`. __Hint__: Consider using `uniq`. __Hint 2__: To use `uniq`, consider also using `chars`.
 ```ruby
+temp_words = []
+words.compact!
+
+temp_words = words.flat_map { |x| x.chars }
+temp_words.uniq!.sort!
+temp_words = temp_words.join
+
+puts temp_words
 ```
 
 ## Extra Practice
 
 Implement a linked list. Try to include the add, delete, and contains operations.
 ```ruby
+
+
 ```
